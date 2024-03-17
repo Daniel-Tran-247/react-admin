@@ -1,0 +1,12 @@
+.bigChartBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .chart {
+        height: 300px;
+    }
+}
