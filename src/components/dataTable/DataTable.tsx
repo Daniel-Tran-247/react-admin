@@ -1,6 +1,7 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { endpoint } from "../../utils/endpoint";
 import "./dataTabe.scss";
 
 interface DataTableProps {
@@ -13,7 +14,7 @@ export default function DataTable({ rows, columns, slug }: DataTableProps) {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (id: number) => {
-      return fetch(`http://localhost:8800/api/${slug}/${id}`, {
+      return fetch(`${endpoint}/api/${slug}/${id}`, {
         method: "DELETE",
       });
     },

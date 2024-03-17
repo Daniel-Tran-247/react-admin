@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import Add from "../../components/add/Add";
 import DataTable from "../../components/dataTable/DataTable";
+import { endpoint } from "../../utils/endpoint";
 import "./Products.scss";
 
 const columns: GridColDef[] = [
@@ -57,8 +58,7 @@ export default function Users() {
   const [open, setOpen] = useState(false);
   const { data, isLoading, error } = useQuery({
     queryKey: ["allproducts"],
-    queryFn: () =>
-      fetch("http://localhost:8800/api/products").then((res) => res.json()),
+    queryFn: () => fetch(`${endpoint}/api/products`).then((res) => res.json()),
   });
   if (error) return <>An error has occurred: {error.message}</>;
   return (

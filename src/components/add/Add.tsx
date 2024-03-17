@@ -1,5 +1,6 @@
 import { GridColDef } from "@mui/x-data-grid";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { endpoint } from "../../utils/endpoint";
 import "./add.scss";
 
 interface Props {
@@ -11,7 +12,7 @@ export default function Add(props: Props) {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: () => {
-      return fetch(`http://localhost:8800/api/${props.slug}`, {
+      return fetch(`${endpoint}/api/${props.slug}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
