@@ -1,1 +1,1 @@
-export const endpoint = "http://localhost:8800";
+export const endpoint = "https://react-admin-api.vercel.app";

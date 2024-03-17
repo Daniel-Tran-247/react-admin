@@ -4,7 +4,7 @@ import { useState } from "react";
 import Add from "../../components/add/Add";
 import DataTable from "../../components/dataTable/DataTable";
 import { endpoint } from "../../utils/endpoint";
-import "./Products.scss";
+import "./products.scss";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
